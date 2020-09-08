@@ -1,0 +1,30 @@
+{
+	"agcgw":{
+		"backurl":"connect-dre.dbankcloud.cn",
+		"url":"connect-dre.hispace.hicloud.com"
+	},
+	"client":{
+		"cp_id":"5190033000025138989",
+		"product_id":"736430079244607156",
+		"client_id":"433191805475881984",
+		"client_secret":"9261E937456793129BE9BB0CFA931CF1D9168BBCAB315424EA53DD4271289754",
+		"app_id":"102817919",
+		"package_name":"com.example.myweatherapp.huawei",
+		"api_key":"CgB6e3x9AtfqMM+owkuYh5LGgEgrnBqYuY328SfA8tqUbNXS3zC3BdETihpGCofKDFek90+5sGweMaeUfSrOZ3PD"
+	},
+	"service":{
+		"analytics":{
+			"collector_url":"datacollector-dre.dt.hicloud.com,datacollector-dre.dt.dbankcloud.cn",
+			"resource_id":"p1",
+			"channel_id":""
+		},
+		"cloudstorage":{
+			"storage_url":"https://ops-dre.agcstorage.link"
+		},
+		"ml":{
+			"mlservice_url":"ml-api-dre.ai.dbankcloud.com,ml-api-dre.ai.dbankcloud.cn"
+		}
+	},
+	"region":"DE",
+	"configuration_version":"1.0"
+}
