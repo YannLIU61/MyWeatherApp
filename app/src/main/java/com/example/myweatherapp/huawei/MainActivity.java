@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.huawei.agconnect.crash.AGConnectCrash;
 import com.huawei.hmf.tasks.OnFailureListener;
 import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hms.location.FusedLocationProviderClient;
@@ -37,6 +38,7 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,11 +73,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /*
+        Crash
+         */
+        AGConnectCrash.getInstance().enableCrashCollection(true);
+
+        /*
+        Push
+         */
         MyReceiver receiver = new MyReceiver();
         IntentFilter filter=new IntentFilter();
         filter.addAction("com.huawei.codelabpush.ON_NEW_TOKEN");
         MainActivity.this.registerReceiver(receiver,filter);
-
 
 
         setContentView(R.layout.activity_main);
