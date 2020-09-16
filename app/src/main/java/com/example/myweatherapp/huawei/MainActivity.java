@@ -33,6 +33,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
+import java.util.Objects;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -45,10 +47,6 @@ public class MainActivity extends AppCompatActivity {
     TextView view_city;
     TextView view_temp;
     TextView view_desc;
-
-
-
-
     ImageView view_weather;
     EditText search;
     FloatingActionButton search_floating;
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         /*
-        Crash
+        Active Crash Service
          */
         AGConnectCrash.getInstance().enableCrashCollection(true);
 
@@ -145,10 +143,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //hide Keyboard
+
                 InputMethodManager imm=(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(getCurrentFocus().getRootView().getWindowToken(),0);
+                imm.hideSoftInputFromWindow(getWindow().getDecorView().getRootView().getWindowToken(),0);
                 api_key(String.valueOf(search.getText()));
-                Log.i("My activity", String.valueOf(search.getText()));
+
             }
         });
 
