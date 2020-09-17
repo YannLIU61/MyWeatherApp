@@ -51,13 +51,15 @@ dependencies {
     
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0-rc01'
-    implementation  'com.huawei.hms:location:5.0.0.301'
+    /*
+    Integration of HMS Kits
+     */
+    implementation 'com.huawei.hms:location:5.0.0.301'
     implementation 'com.huawei.hms:push:5.0.0.300'
     implementation 'com.huawei.hms:ads-lite:13.4.30.307'
     implementation 'com.huawei.hms:hianalytics:5.0.3.300'
     implementation 'com.huawei.agconnect:agconnect-appmessaging:1.4.1.300'
     implementation 'com.huawei.agconnect:agconnect-crash:1.4.1.300'
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

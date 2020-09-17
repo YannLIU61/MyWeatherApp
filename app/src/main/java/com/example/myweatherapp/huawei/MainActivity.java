@@ -100,9 +100,7 @@ public class MainActivity extends AppCompatActivity {
         mLocationRequest = new LocationRequest();
         // Set the interval for location updates, in milliseconds.
         mLocationRequest.setInterval(10000);
-        /**
-         * issue: can not get device country
-         */
+       
         // Get Address
         mLocationRequest.setNeedAddress(true);
         // set the priority of the request
