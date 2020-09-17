@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.huawei.agconnect.appmessaging.AGConnectAppMessaging;
 import com.huawei.agconnect.crash.AGConnectCrash;
 import com.huawei.hmf.tasks.OnFailureListener;
 import com.huawei.hmf.tasks.OnSuccessListener;
@@ -33,8 +34,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
-import java.util.Objects;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
     EditText search;
     FloatingActionButton search_floating;
     FloatingActionButton location_floating;
-
     public static final String TAG = "LocationUpdatesCallback";
     // the callback of the request
     LocationCallback mLocationCallback;
@@ -83,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter filter=new IntentFilter();
         filter.addAction("com.huawei.codelabpush.ON_NEW_TOKEN");
         MainActivity.this.registerReceiver(receiver,filter);
+
+        /*
+        App messaging
+         */
+        AGConnectAppMessaging appMessaging = AGConnectAppMessaging.getInstance();
+        appMessaging.setFetchMessageEnable(true);
+        appMessaging.setDisplayEnable(true);
+        appMessaging.setForceFetch();
 
 
         setContentView(R.layout.activity_main);
